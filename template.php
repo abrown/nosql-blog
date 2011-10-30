@@ -22,18 +22,36 @@
             a{
                 color: #FF0101;
             }
+            .field{
+                clear: left;
+                float: left;
+                line-height: 1.5em;
+            }
+            .field label{
+                display: inline-block;
+                width: 10em;
+                
+            }
         </style>
     </head>
     <body>
         <h1>TestBlog</h1>
         <nav>
-            <a href="<?php echo WebRouting::getUrl(); ?>?storage=json">JSON</a>
-            <a href="<?php echo WebRouting::getUrl(); ?>?storage=couch">CouchDB</a>
-            <a href="<?php echo WebRouting::getUrl(); ?>?storage=mongo">MongoDB</a>
-            <a href="<?php echo WebRouting::getUrl(); ?>?storage=sql">SQL</a>
+            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=json">JSON</a>
+            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=couch">CouchDB</a>
+            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=mongo">MongoDB</a>
+            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=sql">SQL</a>
         </nav>
         <h2><?php echo WebRouting::getAnchoredUrl(); ?></h2>
-        <pre><K:content/><pre>
+        <!-- <template:content /> -->
+        <?php
+            if( !@$error ){
+                list($class, $id, $method) = Service::getRouting();
+                if( $class == 'posts' && $method == 'read' ) include 'snippet-all.php';
+                if( $class == 'post' && $method == 'read' ) include 'snippet-view.php';
+                if( $class == 'post' && $method == 'edit' ) include 'snippet-edit.php';
+            }
+        ?>
     </body>
 </html>
 
