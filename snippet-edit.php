@@ -3,7 +3,7 @@
  * @copyright Copyright 2011 Andrew Brown. All rights reserved.
  * @license GNU/GPL, see 'help/LICENSE.html'.
  */
-if( !$service->id ) $action = WebRouting::createUrl('post/*/create');
+if( !$service->id || $service->id == '*' ) $action = WebRouting::createUrl('post/*/create');
 else $action = WebRouting::createUrl('post/'.$service->id.'/update');
 ?>
 <form action="<?php echo $action; ?>" method="post">
@@ -36,6 +36,6 @@ else $action = WebRouting::createUrl('post/'.$service->id.'/update');
     </fieldset>
     <input type="submit" value="Save" />
 </form>
-<a href="<?php echo WebRouting::getLocationUrl().'/post/'.@$id.'/read'; ?>">Read</a>
-<a href="<?php echo WebRouting::getLocationUrl().'/post/'.@$id.'/edit'; ?>">Edit</a>
-<a href="<?php echo WebRouting::getLocationUrl().'/post/'.@$id.'/delete'; ?>">Delete</a>
+<a href="<?php echo WebRouting::createUrl('/post/'.@$id.'/read'); ?>">Read</a>
+<a href="<?php echo WebRouting::createUrl('/post/'.@$id.'/edit'); ?>">Edit</a>
+<a href="<?php echo WebRouting::createUrl('/post/'.@$id.'/delete'); ?>">Delete</a>

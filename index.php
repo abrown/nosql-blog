@@ -3,6 +3,10 @@ include 'pocket-knife/start.php';
 include 'Post.php';
 include 'Posts.php';
 
+// benchmarking
+BasicBenchmark::startTimer();
+$initial_memory_usage = BasicBenchmark::getMemory();
+
 // choose DB to use
 $dbs = array(
     'sql' => array('type'=>'pdo', 'username'=>'dev', 'password'=>'dev', 'location'=>'localhost', 'database'=>'blog'),
@@ -26,3 +30,13 @@ $configuration = new Configuration(array(
 
 $app = new Service($configuration);
 $app->execute(); 
+
+// benchmarking
+BasicBenchmark::endTimer();
+$time = BasicBenchmark::getTime();
+$peak_memory_usage = BasicBenchmark::getMemory();
+?>
+<div class="message">
+    Time: <?php echo $time; ?> seconds<br/>
+    Memory: <?php echo BasicBenchmark::getPeakMemory(); ?> (initial file loading: <?php echo $initial_memory_usage; ?>)
+</div>

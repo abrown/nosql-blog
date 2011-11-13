@@ -22,6 +22,12 @@
             a{
                 color: #FF0101;
             }
+            th{
+                text-align: left;
+            }
+            td{
+                padding-right: 1em;
+            }
             .field{
                 clear: left;
                 float: left;
@@ -31,6 +37,11 @@
                 display: inline-block;
                 width: 10em;
                 
+            }
+            .message{
+                margin-top: 1em;
+                background: #E3E3CB;
+                padding: 0.5em;
             }
         </style>
     </head>
@@ -42,6 +53,9 @@
             <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=mongo">MongoDB</a>
             <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=sql">SQL</a>
         </nav>
+        <?php
+            if( @$_GET['message'] ) echo '<div class="message">'.htmlentities($_GET['message']).'</div>';
+        ?>
         <h2><?php echo WebRouting::getAnchoredUrl(); ?></h2>
         <!-- <template:content /> -->
         <?php
