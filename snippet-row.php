@@ -9,8 +9,8 @@
     <td><?php echo @$id; ?></td>
     <td><?php echo @$item->title; ?>, by <?php echo @$item->author; ?></td>
     <td>
-        <a href="<?php echo WebRouting::getLocationUrl().'/post/'.@$id.'/read'; ?>">Read</a>
-        <a href="<?php echo WebRouting::getLocationUrl().'/post/'.@$id.'/edit'; ?>">Edit</a>
-        <a href="<?php echo WebRouting::getLocationUrl().'/post/'.@$id.'/delete'; ?>">Delete</a>
+        <a href="<?php echo WebRouting::createUrl('post/'.@$id.'/read'); ?>">Read</a>
+        <a href="<?php echo WebRouting::createUrl('post/'.@$id.'/edit'); ?>">Edit</a>
+        <a href="<?php echo WebRouting::createUrl('post/'.@$id.'/delete'); ?>">Delete</a>
     </td>
 </tr>

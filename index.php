@@ -25,4 +25,4 @@ $configuration = new Configuration(array(
 ));
 
 $app = new Service($configuration);
-$app->execute();
+$app->execute(); 

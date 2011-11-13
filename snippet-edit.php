@@ -3,8 +3,8 @@
  * @copyright Copyright 2011 Andrew Brown. All rights reserved.
  * @license GNU/GPL, see 'help/LICENSE.html'.
  */
-if( !$service->id ) $action = WebRouting::getLocationUrl().'/post/*/create';
-else $action = WebRouting::getLocationUrl().'/post/'.$service->id.'/update';
+if( !$service->id ) $action = WebRouting::createUrl('post/*/create');
+else $action = WebRouting::createUrl('post/'.$service->id.'/update');
 ?>
 <form action="<?php echo $action; ?>" method="post">
     <fieldset>

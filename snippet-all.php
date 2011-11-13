@@ -4,7 +4,7 @@
  * @license GNU/GPL, see 'help/LICENSE.html'.
  */
 ?>
-<a href="<?php echo WebRouting::getLocationUrl().'/post/*/edit'; ?>">New Post</a>
+<a href="<?php echo WebRouting::createUrl('post/*/edit'); ?>">New Post</a>
 <table>
     <tr>
         <th>ID</th>
