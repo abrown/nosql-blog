@@ -1,0 +1,12 @@
+I did find your benchmark file. 
+
+These files are now seperate, 
+but once I can figure out your structure, etc. 
+I will work on merging them with your files.
+The current files do work with all of 
+your files but only 
+if the db is Mongo.  
+
+data/db is for mongo to operate and store
+
+Thanks!

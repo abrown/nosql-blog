@@ -1,5 +1,5 @@
 <?php
-include 'pocket-knife/start.php';
+include 'start.php';
 include 'Post.php';
 include 'Posts.php';
 
@@ -7,14 +7,15 @@ include 'Posts.php';
 $dbs = array(
     'sql' => array('type'=>'pdo', 'username'=>'dev', 'password'=>'dev', 'location'=>'localhost', 'database'=>'blog'),
     'couch' => array('type'=>'couch', 'username'=>'dev', 'password'=>'dev', 'location'=>'localhost', 'database'=>'blog'),
-    'mongo' => array('type'=>'mongo', 'username'=>'dev', 'password'=>'dev', 'location'=>'localhost', 'database'=>'blog'),
+     'mongo' => array('type'=>'mongo', 'location'=>'localhost', 'database'=>'test'),  
     'json' => array('type'=>'json', 'location'=>'db.json', 'schema'=>''),
 );
 if( array_key_exists(@$_GET['storage'], $dbs) ){
     $storage = @$_GET['storage'];
 }
 else{
-    $storage = 'json';
+  $storage = 'mongo';
+   echo ("storage is mongo");
 }
 
 // setup application

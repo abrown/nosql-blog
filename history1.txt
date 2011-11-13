@@ -1,0 +1,13 @@
+yum install couchdb
+yum deplist couchdb
+erlang
+erl
+erlc
+run_erl
+start_erl
+yum install erlang
+vi /etc/yum.repos.d/10gen.repo
+yum install mongo
+yum install mongodb
+ls /var/www/html
+history -w /var/www/html/history1.txt

@@ -4,7 +4,7 @@
  * @license GNU/GPL, see 'help/LICENSE.html'.
  */
 if( !$service->id ) $action = WebRouting::getLocationUrl().'/post/*/create';
-else $action = WebRouting::getLocationUrl().'/post/'.$service->id.'/create';
+else $action = WebRouting::getLocationUrl().'/post/'.$service->id.'/update';
 ?>
 <form action="<?php echo $action; ?>" method="post">
     <fieldset>
