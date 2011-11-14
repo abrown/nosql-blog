@@ -2,7 +2,7 @@
 class Post extends ServiceObjectItem{
     
     public function create($item = null){
-        if( !is_null($item) ) $item->created = date('r');
+        if( !is_null($item) ) $item->created = date('Y-m-d H:i:s');
         $id = parent::create($item);
         // redirect
         $_GET['message'] = 'Item created successfully';
@@ -13,7 +13,7 @@ class Post extends ServiceObjectItem{
     }
     
     public function update($item = null){
-        if( !is_null($item) ) $item->modified = date('r');
+        if( !is_null($item) ) $item->modified = date('c');
         $item = parent::update($item);
         // redirect
         $_GET['message'] = 'Item updated successfully';

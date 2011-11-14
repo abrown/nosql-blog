@@ -53,11 +53,11 @@
             <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=mongo">MongoDB</a>
             <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=sql">SQL</a>
         </nav>
+        <!-- <template:content /> -->
         <?php
             if( @$_GET['message'] ) echo '<div class="message">'.htmlentities($_GET['message']).'</div>';
         ?>
         <h2><?php echo WebRouting::getAnchoredUrl(); ?></h2>
-        <!-- <template:content /> -->
         <?php
             if( !@$error ){
                 list($class, $id, $method) = Service::getRouting();

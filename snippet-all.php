@@ -5,6 +5,7 @@
  */
 ?>
 <a href="<?php echo WebRouting::createUrl('post/*/edit'); ?>">New Post</a>
+<a href="<?php echo WebRouting::createUrl('posts/*/delete'); ?>">Delete All Posts</a>
 <table>
     <tr>
         <th>ID</th>

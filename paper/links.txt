@@ -1,0 +1,8 @@
+CouchDB from http://people.apache.org/~mhammond/dist/1.0.1/
+
+20 Newsgroup data set from http://www.cs.cmu.edu/afs/cs.cmu.edu/project/theo-20/www/data/news20.html
+
+MongoDB driver from 
+https://github.com/downloads/mongodb/mongo-php-driver/mongo-1.1.4.zip
+
+use VC6 thread safe, add extension=php_mongo.dll in php.in, add php_mongo.dll to /ext
