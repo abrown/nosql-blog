@@ -1,0 +1,22 @@
+CouchDB Installation
+--------------------
+
+Uses CouchDB build system with all dependencies, https://github.com/iriscouch/build-couchdb.
+
+1. Install necessary packages:
+ sudo yum install gcc gcc-c++ libtool zlib-devel openssl-devel rubygem-rake
+
+2. Get code (git required):
+ git clone git://github.com/iriscouch/build-couchdb
+ cd build-couchdb
+ git submodule init
+ git submodule update
+
+3. Build (using rake; this can take some time)
+ rake
+
+4. Run
+ build-couchdb/build/bin/couchdb
+
+5. Or run as background (see 'couchdb -h' for more options)
+ build-couchdb/build/bin/couchdb -b
