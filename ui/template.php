@@ -43,15 +43,20 @@
                 background: #E3E3CB;
                 padding: 0.5em;
             }
+            .highlight{
+                background-color: #FF0101;
+                color: white;
+                padding: 0 0.25em;
+            }
         </style>
     </head>
     <body>
-        <h1>TestBlog</h1>
+        <h1>Test Blog</h1>
         <nav>
-            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=json">JSON</a>
-            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=couch">CouchDB</a>
-            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=mongo">MongoDB</a>
-            <a href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=sql">SQL</a>
+            <a class="<?php if($_GET['storage']=='json') echo 'highlight'; ?>" href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=json">JSON</a>
+            <a class="<?php if($_GET['storage']=='couch') echo 'highlight'; ?>" href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=couch">CouchDB</a>
+            <a class="<?php if($_GET['storage']=='mongo') echo 'highlight'; ?>" href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=mongo">MongoDB</a>
+            <a class="<?php if($_GET['storage']=='sql') echo 'highlight'; ?>" href="<?php echo WebRouting::getLocationUrl(); ?>/posts?storage=sql">SQL</a>
         </nav>
         <!-- <template:content /> -->
         <?php

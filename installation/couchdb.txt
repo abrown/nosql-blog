@@ -18,5 +18,5 @@ Uses CouchDB build system with all dependencies, https://github.com/iriscouch/bu
 4. Run
  build-couchdb/build/bin/couchdb
 
-5. Or run as background processs (see 'couchdb -h' for more options)
+5. Or run as background process (see 'couchdb -h' for more options)
  build-couchdb/build/bin/couchdb -b
