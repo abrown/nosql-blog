@@ -1,2 +1,45 @@
 Installing MySQL on Amazon EC2
 --------------------------------
+
+See http://dev.mysql.com/doc/refman/5.1/en/ha-vm-aws-setup.html
+
+1. Install MySQL and PDO libraries
+ yum install mysql mysql-server php-mysql
+
+2. Start MySQL server
+ service mysqld start
+
+2. Add lines 'extension=pdo.so' and 'extension=pdo-mysql.so' to 'php.ini'; location is irrelevant but could 
+be put in the 'Dynamic Extensions' section
+ vi /etc/php.ini
+
+3. Restart Apache
+ service httpd restart
+
+Setup MySQL
+-----------
+
+1. Set a root password:
+ mysqladmin -u root password '**********'
+
+2. Connect to the database
+ mysqladmin -u root -p
+
+3. Create 'blog' database and 'posts' table
+ CREATE DATABASE blog;
+ CREATE TABLE `posts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `title` text,
+  `content` mediumtext,
+  `author` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8;
+
+4. Create authorized user and grant privileges
+ CREATE USER 'dev'@'localhost' IDENTIFIED BY 'dev';
+ GRANT INSERT, SELECT, UPDATE, DELETE on blog.* to dev@localhost;
+ SHOW GRANTS FOR dev@localhost;
+
+
