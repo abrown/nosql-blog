@@ -12,7 +12,7 @@ $dbs = array(
     'sql' => array('type'=>'pdo', 'username'=>'dev', 'password'=>'dev', 'location'=>'localhost', 'database'=>'blog', 'table' => 'posts', 'primary' => 'id'),
     'couch' => array('type'=>'couch', 'location'=>'localhost', 'database'=>'blog'),
     'mongo' => array('type'=>'mongo', 'location'=>'localhost', 'database'=>'blog', 'collection' => 'posts'),
-    'json' => array('type'=>'json', 'location'=>'db.json', 'schema'=>''),
+    'json' => array('type'=>'json', 'location'=>'data/db.json', 'schema'=>''),
 );
 if( array_key_exists(@$_GET['storage'], $dbs) ){
     $storage = @$_GET['storage'];
@@ -25,7 +25,7 @@ $storage_configuration = new Configuration($dbs[$storage]);
 // setup application
 $configuration = new Configuration(array(
     'acl' => array('* can access * in post', '* can access * in posts'),
-    'template' => 'template.php',
+    'template' => 'ui/template.php',
     'storage' => $storage_configuration   
 ));
 
