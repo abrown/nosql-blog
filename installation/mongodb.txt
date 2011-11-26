@@ -27,7 +27,7 @@ Setting up PHP to connect to MongoDB
  yum install php php-cli php-pear php-devel
 
 2. Install MongoDB PEAR package
- pear install mongo
+ pecl install mongo
 
 3. Add line 'extension=mongo.so' to 'php.ini'; location is irrelevant but could 
 be put in the 'Dynamic Extensions' section
