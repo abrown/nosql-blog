@@ -18,7 +18,7 @@ if( array_key_exists(@$_GET['storage'], $dbs) ){
     $storage = @$_GET['storage'];
 }
 else{
-    $storage = 'json';
+    WebHttp::redirect( WebRouting::getLocationUrl()."/posts?storage=json" );
 }
 $storage_configuration = new Configuration($dbs[$storage]);
 
