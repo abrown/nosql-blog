@@ -1,7 +1,7 @@
 <?php
-include '../../pocket-knife/start.php';
-include 'Post.php';
-include 'Posts.php';
+include '../pocket-knife/start.php';
+include 'classes/Post.php';
+include 'classes/Posts.php';
 
 // benchmarking
 BasicBenchmark::startTimer();
