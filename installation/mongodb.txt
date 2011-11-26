@@ -1,0 +1,20 @@
+Installing MongoDB on Amazon EC2
+--------------------------------
+
+See http://www.mongodb.org/display/DOCS/Amazon+EC2
+
+1. Download the correct MongoDB binaries (32-bit or 64-bit)
+ curl -O http://downloads.mongodb.org/linux/mongodb-linux-x86_64-1.0.1.tgz
+
+2. Extract
+ tar -xzf mongodb-linux-x86_64-1.0.1.tgz
+
+3. Test
+ cd mongodb-linux-x86_64-1.0.1/bin
+ ./mongod --version
+
+4. Create the data directory 
+ mkdir /data/db
+
+5. Run as a background process (see 'mongod --help' for more options)
+ ./mongod --fork --logpath ~/mongod.log --dbpath /mnt/db/
